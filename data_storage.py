@@ -1,3 +1,8 @@
+"""
+Jimson Huang
+CS 422 Project 1
+"""
+
 import numpy as np
 
 
@@ -21,7 +26,3 @@ def build_dict(data: np.ndarray) -> tuple[list, dict]:
     features = [{attributes[j]: features[i][j] for j in range(len(features[i]))} for i in range(len(features))]
     labels = {i: labels[i] for i in range(len(labels))}
     return features, labels
-
-
-if __name__ == "__main__":
-    pass
