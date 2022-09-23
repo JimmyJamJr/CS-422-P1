@@ -165,9 +165,11 @@ def RF_test_random_forest(X: np.ndarray, Y: np.ndarray, RF: list) -> float:
     correct_count = 0
     for i in range(n_samples):
         sample_predictions = [0, 0]
+        # For each sample, go through each tree and make individual predictions from the trees
         for tree in RF:
             prediction = DT_make_prediction(X[i, :], tree)
             sample_predictions[prediction] += 1
+        # Determine the majority prediction between all the trees
         most_predicted = 0 if sample_predictions[0] > sample_predictions[1] else 1
         if most_predicted == Y[i]:
             correct_count += 1
