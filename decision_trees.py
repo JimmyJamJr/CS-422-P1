@@ -13,7 +13,7 @@ class Node:
     def __init__(self, data: int, decision: bool = False):
         # References to left and right child node
         self.left: Node
-        self.right: None
+        self.right: Node
         # Integer data representing the feature being asked or decision made in the case of decision nodes
         self.data: int = data
         # Whether the node is a decision node
